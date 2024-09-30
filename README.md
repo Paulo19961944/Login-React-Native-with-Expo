@@ -35,7 +35,7 @@ O Projeto de Hoje é uma página de Login com React Native e com Expo. E como di
   * Tutoriais: Criar guias ou tutoriais interativos para novos usuários.
   * Acessibilidade: Melhorar a acessibilidade da aplicação para todos os usuários.
 
-## Exemplos de Uso
+## EXEMPLOS DE USO
   * Aplicativo de Redes Sociais: Onde usuários podem se conectar, compartilhar conteúdos e interagir.
   * Aplicativo de Aprendizado: Oferecendo cursos e recursos para usuários registrados.
   * Aplicativo de Gestão de Tarefas: Para que usuários organizem suas atividades diárias.
