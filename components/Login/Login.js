@@ -1,3 +1,4 @@
+// components/Login/Login.js
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -14,6 +15,7 @@ export default function LoginPage() {
     try {
       await signInWithEmailAndPassword(auth, username, password);
       Alert.alert("Login realizado com sucesso!", "Bem-vindo de volta!");
+      navigation.navigate('Initial'); // Navegar para a página inicial após o login
     } catch (error) {
       Alert.alert("Erro", error.message);
     }
