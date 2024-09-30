@@ -2,9 +2,9 @@
 O Projeto de Hoje é uma página de Login com React Native e com Expo. E como dizemos, Página de Login é uma base, pois tudo que você entra tem uma página de login. Ou seja, qualquer aplicativo e basicamente tudo mesmo. 
 
 ## TECNOLOGIAS UTILIZADAS
-**1. JavaScript -** Utilizando o JavaScript com a biblioteca React Native, que é uma biblioteca em JavaScript que permite criar base em Aplicativos Móveis, ele pode ser usado em IOS ou Android em um mesmo código.
-**2. Expo -** É um framework que tem vários componentes prontos, agilizando o processo de desenvolvimento
-**3. Firebase Authentication -** O Firebase Authentication permite a Autenticação de usuários de forma rápida e funciona bem com baixa escalabilidade
+**1. JavaScript -** Utilizando o JavaScript com a biblioteca React Native, que é uma biblioteca em JavaScript que permite criar base em Aplicativos Móveis, ele pode ser usado em IOS ou Android em um mesmo código.<br></br>
+**2. Expo -** É um framework que tem vários componentes prontos, agilizando o processo de desenvolvimento<br></br>
+**3. Firebase Authentication -** O Firebase Authentication permite a Autenticação de usuários de forma rápida e funciona bem com baixa escalabilidade<br></br>
 **4. Firestore Database -** É um Banco de Dados que permite integrações rápidas, e funciona bem com baixa escalabilidade. O que no projeto como é uma demonstração, serve bem, como exemplos para controlar IoT dentro de casa é bom, pois a escalabilidade desse tipo de projeto tende a ser baixa.
 
 ## APLICAÇÕES
