@@ -1,4 +1,4 @@
-// App.js
+// IMPORTA AS BIBLIOTECAS E OS COMPONENTES NECESSÁRIOS PARA O APP
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, ActivityIndicator } from 'react-native';
 import * as Font from 'expo-font';
@@ -10,12 +10,14 @@ import InitialPageTemplate from './components/InitialPage/InitialPage';
 import { auth } from './firebaseConfig';
 import { onAuthStateChanged } from 'firebase/auth';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator(); // Cria a Navegação
 
+// FUNÇÃO APP
 export default function App() {
-  const [fontLoaded, setFontLoaded] = useState(false);
-  const [user, setUser] = useState(null);
+  const [fontLoaded, setFontLoaded] = useState(false); // Define se a fonte foi carregada como falsa
+  const [user, setUser] = useState(null); // Define o Usuário
 
+  // FUNÇÃO PARA CARREGAR AS FONTES
   useEffect(() => {
     async function loadFonts() {
       await Font.loadAsync({
@@ -23,23 +25,26 @@ export default function App() {
         'TitilliumWeb-Bold': require('./assets/fonts/TitilliumWeb-Bold.ttf'),
         'TitilliumWeb-SemiBold': require('./assets/fonts/TitilliumWeb-SemiBold.ttf'),
       });
-      setFontLoaded(true);
+      setFontLoaded(true); // Define a fonte carregada como true
     }
-    loadFonts();
+    loadFonts(); // Chama a função que carrega a fonte
 
+    // AUTENTICAÇÃO DE USUÁRIO DO FIREBASE
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
 
-    return () => unsubscribe();
+    return () => unsubscribe(); // Retorna a Função de Autenticação do Usuário
   }, []);
 
+  // SE A FONTE NÃO FOR CARREGADA
   if (!fontLoaded) {
     return (
-      <ActivityIndicator size="large" color='#00f' />
+      <ActivityIndicator size="large" color='#00f' /> // Chama o Loading Page
     );
   }
 
+  // RENDERIZA O CONTAINER SE O USUÁRIO NÃO ESTIVER LOGADO
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName={user ? "Initial" : "Login"}>

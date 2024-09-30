@@ -1,4 +1,4 @@
-// components/InitialPage/InitialPage.js
+// IMPORTA AS BIBLIOTECAS E OS COMPONENTES NECESSÁRIOS PARA O APP
 import React from 'react';
 import { View, Text, TouchableOpacity, Alert } from 'react-native';
 import styles from './Style';
@@ -7,18 +7,22 @@ import { auth } from '../../firebaseConfig';
 import { signOut } from 'firebase/auth';
 import { useNavigation } from '@react-navigation/native';
 
+// FUNÇÃO PARA CARREGAR A PÁGINA INICIAL
 export default function InitialPageTemplate() {
-  const navigation = useNavigation();
+  const navigation = useNavigation(); // Chama a funçao de navegação
 
+  // FUNÇÃO DE LOGOUT
   const handleLogout = async () => {
+    // SE DER TUDO CERTO
     try {
       await signOut(auth);
-      navigation.navigate('Login');
-    } catch (error) {
+      navigation.replace('Login'); // Usar replace para não voltar ao inicial
+    } catch (error) { // SE OCORRER UM ERRO
       Alert.alert("Erro", error.message);
     }
   };
 
+  // RENDERIZA A PÁGINA
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Seja Bem Vindo!</Text>
