@@ -3,19 +3,19 @@ import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styles from './Style';
 
-export default function LoginPage() {
+export default function CreateAccountPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigation = useNavigation();
 
-  const handleLogin = () => {
+  const createAccountFromUser = () => {
     console.log('Usuário:', username);
     console.log('Senha:', password);
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
+      <Text style={styles.title}>Criar Conta</Text>
       <Text style={styles.text}>Digite o seu nome de usuário:</Text>
       <TextInput 
         style={styles.input}
@@ -33,11 +33,11 @@ export default function LoginPage() {
         secureTextEntry
         accessibilityLabel="Senha"
       />
-      <TouchableOpacity style={styles.button} onPress={handleLogin}>
-        <Text style={styles.buttonText}>Login</Text>
+      <TouchableOpacity style={styles.button} onPress={createAccountFromUser}>
+        <Text style={styles.buttonText}>Create Account</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('CreateAccount')}>
-        <Text style={styles.createAccount}>Não tem uma conta?</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+        <Text style={styles.createAccount}>Faça seu Login</Text>
       </TouchableOpacity>
     </View>
   );
